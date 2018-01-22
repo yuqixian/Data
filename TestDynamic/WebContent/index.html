@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 1000px;height:800px;border:solid 1px red;" onchange="change1()"></div>
+    <input type="button" value="点击" onclick="change()">
+    <script type="text/javascript">
+    var myChart = document.getElementById('main');
+  	//自适应宽高
+    var myChartContainer = function () {
+        myChart.style.width = window.innerWidth+'px';
+        myChart.style.height = window.innerHeight+'px';
+    };
+    myChartContainer();
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(myChart);
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        
+        
+       function change() {
+        	$("#main").css("width", $("#main").width()-10);
+    		$("#main").css("height", $("#main").height()-10);
+    		//myChart.setOption(option);
+        } 
+       
+       /* $(function() {
+    	   $("#main").resize(function(){
+         	  alert("Stop it!");
+         	});
+       }) */
+       
+       function change1() {
+    	   alert("Stop it!");
+       }
+        
+    </script>
+</body>
+</html>

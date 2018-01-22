@@ -1,0 +1,15 @@
+#数据库连接参数
+
+#连接数据库的URL
+MYSQLURL_db_machine_1_1=jdbc:mysql://localhost:3306/db_machine_1_1
+MYSQLURL_db_config_1=jdbc:mysql://localhost:3306/db_config_1
+MYSQLURL_db_config=jdbc:mysql://localhost:3306/db_config
+
+#连接数据库的用户名
+user=root
+
+#连接数据库的密码
+password=123456
+
+#连接数据库的驱动
+MYSQLDriver=com.mysql.jdbc.Driver
